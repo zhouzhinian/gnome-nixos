@@ -6,7 +6,7 @@
    environment.systemPackages = with pkgs; [
    	git wget ripgrep jq yq-go eza fzf which file gnused zstd gnupg aria2 
 	tree zip xz unzip p7zip	clash-verge-rev sublime4
-	ollama rustup ghostty fastfetch yesplaymusic	
+	ollama rustup ghostty fastfetch yesplaymusic htop	
 	inputs.yazi.packages.${pkgs.system}.default
 	inputs.zen-browser.packages."${system}".default
   ];
