@@ -18,20 +18,16 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_6_12; #最新Linux内核
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-   system.stateVersion = "24.11"; # Did you read the comment?
+ 
+  system.stateVersion = "25.05"; # Did you read the comment?
     # 记得导入 lib
 
 #  nix.settings.substituters = [ "https://mirrors.cernet.edu.cn/nix-channels/store"];
 
   # 变量
-	environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  # Configure network proxy if necessary
-   networking.proxy.default = "http://127.0.0.1:7897";
-   networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -50,9 +46,6 @@
     layout = "cn";
     variant = "";
   };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
