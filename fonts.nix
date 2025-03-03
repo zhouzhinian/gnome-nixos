@@ -36,7 +36,7 @@
       wqy_microhei
       meslo-lgs-nf
       source-code-pro
-#      iosevka 		    
+      iosevka 		    
       jetbrains-mono
 ];
 
