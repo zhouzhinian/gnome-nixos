@@ -6,7 +6,6 @@
   imports =
     [ # Include the results of the hardware scan.
 	./hardware-configuration.nix
-	./nvidia.nix
 	./nano.nix
 	./fonts.nix
 	./clean.nix
@@ -22,11 +21,7 @@
   networking.hostName = "nixos"; # Define your hostname.
  
   system.stateVersion = "25.05"; # Did you read the comment?
-    # 记得导入 lib
-
-#  nix.settings.substituters = [ "https://mirrors.cernet.edu.cn/nix-channels/store"];
-
-  # 变量
+    # 变量
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Enable networking
@@ -37,10 +32,6 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "zh_CN.UTF-8";
-
-  # Enable the X11 windowing system.
- # services.xserver.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "cn";
@@ -65,22 +56,14 @@
     description = "zhinian";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-
-  # Install firefox.
- # programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
+   programs.mtr.enable = true;
    programs.gnupg.agent = {
     enable = true;
      enableSSHSupport = true;
    };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
